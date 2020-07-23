@@ -42,31 +42,5 @@ int main(int argc, char **argv)
                 break;
             default:
                 printf("Lower screen: Unknown\n");
-                break;
-        }
-    }
-    else
-    {
-        printf("\nCan't check O3DS Screen vendors.\n");
-    }
-    
-    printf("\nPress START to exit.\n");
-    
-    while(aptMainLoop()) //Always have the main code loop in here
-    {
-        hidScanInput(); //Checks which keys are pressed
-
-        u32 button = hidKeysDown(); // Checks which keys are up and which ones are down
-        if (button & KEY_START)
-        {
-            break;
-        }
-    } 
-
-    // Exit services
-    aptExit();
-    gfxExit();
-    hidExit();
-    gspLcdExit();
-    return 0;
-}
+                break; } } else { printf("\nCan't check O3DS Screen vendors.\n"); } printf("\nPress START to exit.\n"); while(aptMainLoop()) //Always have the main code loop in here { hidScanInput(); //Checks which keys are pressed u32 button = hidKeysDown(); // Checks which keys are up and which ones are down if (button & KEY_START) { break; }
+     } // Exit services aptExit(); gfxExit(); hidExit(); gspLcdExit(); return 0;}
